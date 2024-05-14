@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feeder | Get Up to Date Feeds</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Adobe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/azg1dff.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    
+    <header>
+        <div class="container d-flex flex-row justify-content-between align-items-center">
+            <div class="social-icons d-flex justify-content-between gap-4">
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-threads"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-youtube"></i>
+            </div>
+            <span class="fs-3" style="font-family: 'raleway', serif; font-weight: 600;" id="logoText"><span style="font-family: 'raleway', serif; font-weight: 300;">micro</span>feeds</span>
+            <button class="icon border border-0 bg-transparent d-md-none">
+                <i class="bi bi-list"></i>
+            </button>
+            <nav class="d-none d-md-block">
+                <ul class="d-flex flex-row mb-0 gap-4 list-unstyled ">
+                    <li>
+                        <a class="text-decoration-none menuItems activeMenu" href="#">Home</a>
+                    </li>
+                    <li>
+                        <a class="text-decoration-none menuItems" href="#">About</a>
+                    </li>
+                    <li>
+                        <a class="text-decoration-none menuItems" href="#">Services</a>
+                    </li>
+                    <li>
+                        <a class="text-decoration-none menuItems" href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="container mainSection">
+            <div class="carouselSection">
+                <div class="featured d-flex align-items-center pt-2 mx-3">
+                    <h2 class="featuredText px-3">Featured</h2>
+                </div>
+                
+            </div>    
+        </section>
+
+        <div class="container py-4 regularIcons">
+            <div class="row categories d-flex flex-row justify-content-between align-items-center">
+                <div class="col-lg-2 col-md-4 col-sm-4 col-4 activeIcon">
+                    <img id="entertainment-logo" src="data:image/png;base64,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">
+                    <p>Entertainment</p>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4 col-4 category-icons">
+                    <img src="data:image/png;base64,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">
+                    <p>Sports</p>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4 col-4 category-icons">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAADUklEQVR4nO2bv47TQBDGXd09xEEzkzRBonFogAIkkIig4jU43Qsg8QanCHgC2jQ0KChL5KUj13D3DASeIJEobMnIEKTEimPHa+8f7/eTpvPc5r5vdzIebYIAAAAAAAAAAAAAAAAAAADAEabT9HQWJRdCJgsh47WQSaon/q61EDI5n0zSk8BH5vP0TMjkRp/oBREl19lnCXzb+cIG8Tcxi5LvXp2E2b+yY1z4nAmvAl8QMrmy0IBvgS/MonhlnwHxKvAFYYHg+yLwBWGB2DBAFgtx+XaehuH9lJl3Ihw+SMfvosbzcALkrhCZYHkR/8fw3sPG82CA3BWiSMQyIevmwQBZTchMxPF72XiedgN6vd4pEV0Q0YKI1od2ThNBROtsLWY+HwwGJ2VC5POrfonWzdNqQL/fP2Pmm7ZF52Izricff/lpQLbzTYrPm3j0+EX6ef7bPwOysmNafN7E6zcf/DOAma9yH/JTVpLaXrfX691i5un22k+evqzUTlbpXlTzdJ6A1bYImTCBJpj59vbagzt3C4XIXpoyMat2L6p5Ok/AzhFtfcEcqiWi7QjaBgYkdhtARM+J6Oee1nFJRCPV5xknoNSAZVHXQkQ/VJ9nGHDYgENtYxVBuSEDOjsNLStBh8Rk5mdNPy8qtJOdmoYea4Dq36trQGenoa4bMHR9Glom2PaX6r4arvo81zSgah9fN88mA0abFnJvDVd9nmHAcSWjaRgGwABhcwnSvb7wbRrqigHjrkxD8/fvVbsE1WDD62s1YN/9e9MCsC8GFN2/V62RMEDx/r1qjYQBDt+/F0eUIOenoTbevxdHGOD8NNS00ELRgCIRy4SsmwcDZMemoVV3pO5ay77MgqouqLvWMgwwW2sZBpittQwDzNZa9mUaaouQomae89PQtndMWDNPtUtpO7QboHunMQwwu8MYBsAAYVMJsvUEXLo+DXXdgNCXaagrsyBu+Q3dmAGuzIK45Td0Ywbo3mmMUYTZncYwoJ4gdYUUMMCskAIGuDkLCn2Zhto6Cxr7Mg3VHYxZEAwQPp+A0PDdVO9L0Njw3VTvDRCWR+dLkPDGgChemv5nhGsRxaW/c67M7Gs8ggnJUeJ/kXHp75wBAAAAAAAAAAAAQOAdfwB+ksc/vfKiyQAAAABJRU5ErkJggg==">
+                    <p>City</p>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4 col-4 category-icons secondRow">
+                    <img src="data:image/png;base64,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">
+                    <p>World</p>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4 col-4 category-icons secondRow">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAADZ0lEQVR4nO2cz04UQRDGNyZy04NnLlRvQjJwwaPwDCqI6BN4oJtnWD0Jmhii8eBVd8rEZ0B9CP8h6kWfQODWpWOaP2ad6EaYnqnt2e+X1HErXd9X3bWTzHSnAwAAAAAAAAAjAhHNGmM2iegtEe0bY4qTRPhN+O1RjlntepIhy7IJInpsjPlxUtGHhBDRo5Bbu76RJsuyCWPMy4jCl2MLJgyBDju/LvGPj6aHzbVUeme+lMT6OjU1dW16evrcSfOF3xDRojFmu3wcGWNm6qkiYYwxm2XxJycnL1TNG3IQ0bdS7gdxVt0iiOjdoEih82Pl7na710u74E2s3K2BiHYHRTrNsfMvut3u+dIO2I2VuzWY0rBMLX/yGBjw/xQvehPCqys+t+zZbnu2+8KuqBKmZEDVfHXnDzUf1J5bDloETTpN4PtuybP7MuoCScP5fW4/e7aLtQlf9HpnPNt7sRcuRzE/N/NbnIWLM8nlHzBiI2gV3QCfu/t1LVrYFa9u3zgQKYjz+s7N5PL/YQK79bji991SnQuWFobP3dUo4ofhEs437YIksQhzMspgDhNeuxhJNDyvLVc2wLN7rl2IJBqebT+CAXZHuxBJNMJzQnUDcrenXYgkGkG7ygZoFyGJBwxgGKDehYIdoC+E4AjSF0MUAjOAYYB6Fwp2gL4QgiNIXwxRCMwAhgHqXSjYAfpCCI4gfTFEITADGAaod6FgB+gLITiC9MUQhcAMYBig3oWCHaAvhOAI0hdDFAIzgFtqwFZvpbg0l9X6SalJIMILv+HF38YNGHzde9xjYcjr7jDAtNSA4/fttbvPjED3D/veoDYDRjVMSSDt9cAAhgHYAVXQ7iDBEaQr6FbF5w3thkh+B8xX/Kelvf6xNmChxu+Bx8aAV6d83mjie+CxMEASDxjAMEC9CwU7QF8IwRGkL4YoBGYAJ24APtR2pxbfs/0ew4CP2l0kiYZn+yGGAbl2IZJo+Nw9rWwArqtxutfVFE9unfXsPml3k4zrhU2BcBugdkGSUPjc/fRsL0cRf8CE2m5MlJaFZ3u3U8u1lbnd0C5ORr7z3Xot11YeE24DxExwf+v6Hd9fvdJpgsPBvLYc7kQL/3XH8WHN527P5+69z+2zoEXQpBHxAQAAAAAAAAAAAAAAAAAAAOikxC+nWtGZjWhSWgAAAABJRU5ErkJggg==">
+                    <p>Business</p>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4 col-4 category-icons secondRow">
+                    <img width="46" height="46" src="data:image/png;base64,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">
+                    <p>Technology</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- _____________________________________Icons for Mobile Screen__________________________________________________ -->
+
+        <section class="container">
+            <div class="entertainment-card">
+                <div class="entertainmentHeading d-flex flex-column ">
+                    <h2 class="entertainmentText px-3">Entertainment</h2>
+                    <ul class="list-unstyled gap-3 mt-4 ">
+                        <div class="row g-4 ">
+                            <div class="col-12 col-lg-6 ">
+                                <li class=" mainNewsCard w-100 h-100 pb-5 py-3">
+                                    <div class="d-flex entertainmentImgSection0 pb-3">
+                                        <img class="achievementIcon" id="entertainmentMainNewsIcon0 secondCard0" src="./images/Asset 1@4x.png" alt="">
+                                        <div class="d-flex flex-column entertainmentImgSection0 blankDiv0 position-absolute">
+                                            <div class="newsHeadOnly0">
+                                                <h3 class="h5 pt-3 mx-3">Lorem ipsum dolor sit amet consectetur.</h3>  
+                                            </div>
+                                            <div class="newsDatenly0 d-flex mx-1">
+                                                <h6>Date:</h6>
+                                                <h6>Time:</h6>
+                                                <h6>Author:</h6>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                     
+                                <div class="headlineAndNewsOnly px-3">                                                                                                                                                  
+                                    <p class="text-secondary pt-3">Recipient of the #1 WWF 2024 Award for exemplary tiger conservation efforts, sustainable practices, and habitat protection.</p>
+                                </div>
+                                </li>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <li class=" mainNewsCard w-100 h-100 pb-5 py-3">
+                                    <div class="d-flex entertainmentImgSection0 pb-3">
+                                        <img class="achievementIcon" id="entertainmentMainNewsIcon0 secondCard0" src="./images/Asset 1@4x.png" alt="">
+                                        <div class="d-flex flex-column entertainmentImgSection0 blankDiv0 position-absolute">
+                                            <div class="newsHeadOnly0">
+                                                <h3 class="h5 pt-3 mx-3">Lorem ipsum dolor sit amet consectetur.</h3>  
+                                            </div>
+                                            <div class="newsDatenly0 d-flex mx-1">
+                                                <h6>Date:</h6>
+                                                <h6>Time:</h6>
+                                                <h6>Author:</h6>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                     
+                                <div class="headlineAndNewsOnly px-3">                                                                                                                                                  
+                                    <p class="text-secondary pt-3">Recipient of the #1 WWF 2024 Award for exemplary tiger conservation efforts, sustainable practices, and habitat protection.</p>
+                                </div>
+                                </li>
+                            </div>
+
+                            <!-- Entertainment Section for Medium Screen -->
+
+                            <div class="col-12 col-lg-6 entertainmentSectionMD">
+                                <li class=" mainNewsCard w-100 h-100 pb-5">
+                                    <div class="d-flex entertainmentImgSection0 pb-3">
+                                        <img class="achievementIcon" id="entertainmentMainNewsIcon0 secondCard0" src="./images/Asset 1@4x.png" alt="">
+                                        <div class="d-flex flex-column entertainmentImgSection0 blankDiv0 position-absolute">
+                                            <div class="newsHeadOnly0">
+                                                <h3 class="h5 pt-3 mx-3">Lorem ipsum dolor sit amet consectetur.</h3>  
+                                            </div>
+                                            <div class="newsDatenly0 d-flex mx-1">
+                                                <h6>Date:</h6>
+                                                <h6>Time:</h6>
+                                                <h6>Author:</h6>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                     
+                                <div class="headlineAndNewsOnly px-3">                                                                                                                                                  
+                                    <p class="text-secondary pt-3">Recipient of the #1 WWF 2024 Award for exemplary tiger conservation efforts, sustainable practices, and habitat protection.</p>
+                                </div>
+                                </li>
+                            </div>
+                            <div class="col-12 col-lg-6 entertainmentSectionMD">
+                                <li class=" mainNewsCard w-100 h-100 pb-5">
+                                    <div class="d-flex entertainmentImgSection0 pb-3">
+                                        <img class="achievementIcon" id="entertainmentMainNewsIcon0 secondCard0" src="./images/Asset 1@4x.png" alt="">
+                                        <div class="d-flex flex-column entertainmentImgSection0 blankDiv0 position-absolute">
+                                            <div class="newsHeadOnly0">
+                                                <h3 class="h5 pt-3 mx-3">Lorem ipsum dolor sit amet consectetur.</h3>  
+                                            </div>
+                                            <div class="newsDatenly0 d-flex mx-1">
+                                                <h6>Date:</h6>
+                                                <h6>Time:</h6>
+                                                <h6>Author:</h6>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                     
+                                <div class="headlineAndNewsOnly px-3">                                                                                                                                                  
+                                    <p class="text-secondary pt-3">Recipient of the #1 WWF 2024 Award for exemplary tiger conservation efforts, sustainable practices, and habitat protection.</p>
+                                </div>
+                                </li>
+                            </div>
+                            <div class="col-12 col-lg-6 entertainmentSectionMD">
+                                <li class=" mainNewsCard w-100 h-100 pb-5">
+                                    <div class="d-flex entertainmentImgSection0 pb-3">
+                                        <img class="achievementIcon" id="entertainmentMainNewsIcon0 secondCard0" src="./images/Asset 1@4x.png" alt="">
+                                        <div class="d-flex flex-column entertainmentImgSection0 blankDiv0 position-absolute">
+                                            <div class="newsHeadOnly0">
+                                                <h3 class="h5 pt-3 mx-3">Lorem ipsum dolor sit amet consectetur.</h3>  
+                                            </div>
+                                            <div class="newsDatenly0 d-flex mx-1">
+                                                <h6>Date:</h6>
+                                                <h6>Time:</h6>
+                                                <h6>Author:</h6>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                     
+                                <div class="headlineAndNewsOnly px-3">                                                                                                                                                  
+                                    <p class="text-secondary pt-3">Recipient of the #1 WWF 2024 Award for exemplary tiger conservation efforts, sustainable practices, and habitat protection.</p>
+                                </div>
+                                </li>
+                            </div>
+                            
+                            <!-- ________________________________________________________________________________________________________ -->
+
+                            <div class="col-lg-4 col-md-6 newsCards py-3">
+                                <li class=" mainNewsCard w-100 h-100 ">
+                                    <div class="d-flex entertainmentImgSection0 pb-3">
+                                        <img class="achievementIcon" id="entertainmentMainNewsIcon0" src="./images/Asset 1@4x.png" alt="">
+                                        <div class="d-flex flex-column entertainmentImgSection0 otherBlankDiv position-absolute">                                           
+                                            <div class="newsDatenly0 dateOnlyMedium d-flex flex-column mx-1">
+                                                <h6>Date:</h6>
+                                                <h6>Time:</h6>
+                                                <h6>Author:</h6>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                     
+                                <div class="headlineAndNewsOnly0 otherCards px-3">
+                                    <div class="newsHeadOnly0 newsHeadOnlyOtherCards">
+                                        <h3 class="h5 pt-3">Lorem ipsum dolor sit amet consectetur.</h3>  
+                                    </div>                                                                                                                                                  
+                                    <p class="text-secondary">Recipient of the #1 WWF 2024 Award for exemplary tiger conservation efforts, sustainable practices, and habitat protection.</p>
+                                </div>
+                                </li>
+                            </div>
+                            <div class="col-lg-4 col-md-6 newsCards py-3">
+                                <li class=" mainNewsCard w-100 h-100 ">
+                                    <div class="d-flex entertainmentImgSection0 pb-3">
+                                        <img class="achievementIcon" id="entertainmentMainNewsIcon0" src="./images/Asset 1@4x.png" alt="">
+                                        <div class="d-flex flex-column entertainmentImgSection0 otherBlankDiv position-absolute">                                           
+                                            <div class="newsDatenly0 dateOnlyMedium d-flex flex-column mx-1">
+                                                <h6>Date:</h6>
+                                                <h6>Time:</h6>
+                                                <h6>Author:</h6>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                     
+                                <div class="headlineAndNewsOnly0 otherCards px-3">
+                                    <div class="newsHeadOnly0 newsHeadOnlyOtherCards">
+                                        <h3 class="h5 pt-3">Lorem ipsum dolor sit amet consectetur.</h3>  
+                                    </div>                                                                                                                                                  
+                                    <p class="text-secondary">Recipient of the #1 WWF 2024 Award for exemplary tiger conservation efforts, sustainable practices, and habitat protection.</p>
+                                </div>
+                                </li>
+                            </div>
+                            <div class="col-lg-4 col-md-6 newsCards py-3">
+                                <li class=" mainNewsCard w-100 h-100 ">
+                                    <div class="d-flex entertainmentImgSection0 pb-3">
+                                        <img class="achievementIcon" id="entertainmentMainNewsIcon0" src="./images/Asset 1@4x.png" alt="">
+                                        <div class="d-flex flex-column entertainmentImgSection0 otherBlankDiv position-absolute">                                           
+                                            <div class="newsDatenly0 dateOnlyMedium d-flex flex-column mx-1">
+                                                <h6>Date:</h6>
+                                                <h6>Time:</h6>
+                                                <h6>Author:</h6>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                     
+                                <div class="headlineAndNewsOnly0 otherCards px-3">
+                                    <div class="newsHeadOnly0">
+                                        <h3 class="h5 pt-3">Lorem ipsum dolor sit amet consectetur.</h3>  
+                                    </div>                                                                                                                                                  
+                                    <p class="text-secondary">Recipient of the #1 WWF 2024 Award for exemplary tiger conservation efforts, sustainable practices, and habitat protection.</p>
+                                </div>
+                                </li>
+                            </div>                          
+
+                            <!-- _____________________________________Mobile Screen__________________________________________________ -->
+
+                            <div class="mobileNewsCard pb-3">
+                                <li class="w-100 h-100">
+                                    <div class="d-flex entertainmentImgSection0 pb-3">
+                                        <img class="achievementIcon" id="entertainmentMainNewsIcon0 secondCard0" src="./images/Asset 1@4x.png" alt="">
+                                        <div class="d-flex flex-column entertainmentImgSection0 mobileBlankDiv position-absolute">
+                                            <div class="mobileNewsHeadOnly">                                                
+                                            </div>
+                                            <div class="newsDatenly0 d-flex flex-column mx-1">
+                                                <h6>Date:</h6>
+                                                <h6>Time:</h6>
+                                                <h6>Author:</h6>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                     
+                                <div class="mobileheadlineAndNewsOnly px-3">
+                                    <h3 class="h5 pt-3">Lorem ipsum dolor sit amet consectetur.</h3>                                                                                                                                                
+                                    <p class="text-secondary pt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, suscipit cum atque error blanditiis magni quia quo.</p>
+                                </div>
+                                </li>
+                            </div>
+                            <div class="mobileNewsCard py-3">
+                                <li class="w-100 h-100">
+                                    <div class="d-flex entertainmentImgSection0 pb-3">
+                                        <img class="achievementIcon" id="entertainmentMainNewsIcon0 secondCard0" src="./images/Asset 1@4x.png" alt="">
+                                        <div class="d-flex flex-column entertainmentImgSection0 mobileBlankDiv position-absolute">
+                                            <div class="mobileNewsHeadOnly">                                                  
+                                            </div>
+                                            <div class="newsDatenly0 d-flex flex-column mx-1">
+                                                <h6>Date:</h6>
+                                                <h6>Time:</h6>
+                                                <h6>Author:</h6>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                     
+                                <div class="mobileheadlineAndNewsOnly px-3">
+                                    <h3 class="h5 pt-3">Lorem ipsum dolor sit amet consectetur.</h3>                                                                                                                                                
+                                    <p class="text-secondary pt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, suscipit cum atque error blanditiis magni quia quo.</p>
+                                </div>
+                                </li>
+                            </div>
+                            <div class="mobileNewsCard py-3">
+                                <li class="w-100 h-100">
+                                    <div class="d-flex entertainmentImgSection0 pb-3">
+                                        <img class="achievementIcon" id="entertainmentMainNewsIcon0 secondCard0" src="./images/Asset 1@4x.png" alt="">
+                                        <div class="d-flex flex-column entertainmentImgSection0 mobileBlankDiv position-absolute">
+                                            <div class="mobileNewsHeadOnly">                                                  
+                                            </div>
+                                            <div class="newsDatenly0 d-flex flex-column mx-1">
+                                                <h6>Date:</h6>
+                                                <h6>Time:</h6>
+                                                <h6>Author:</h6>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                     
+                                <div class="mobileheadlineAndNewsOnly px-3">
+                                    <h3 class="h5 pt-3">Lorem ipsum dolor sit amet consectetur.</h3>                                                                                                                                                 
+                                    <p class="text-secondary pt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, suscipit cum atque error blanditiis magni quia quo.</p>
+                                </div>
+                                </li>
+                            </div>
+                            <div class="mobileNewsCard py-3">
+                                <li class="w-100 h-100">
+                                    <div class="d-flex entertainmentImgSection0 pb-3">
+                                        <img class="achievementIcon" id="entertainmentMainNewsIcon0 secondCard0" src="./images/Asset 1@4x.png" alt="">
+                                        <div class="d-flex flex-column entertainmentImgSection0 mobileBlankDiv position-absolute">
+                                            <div class="mobileNewsHeadOnly">                                                  
+                                            </div>
+                                            <div class="newsDatenly0 d-flex flex-column mx-1">
+                                                <h6>Date:</h6>
+                                                <h6>Time:</h6>
+                                                <h6>Author:</h6>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                     
+                                <div class="mobileheadlineAndNewsOnly px-3">
+                                    <h3 class="h5 pt-3">Lorem ipsum dolor sit amet consectetur.</h3>                                                                                                                                                 
+                                    <p class="text-secondary pt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, suscipit cum atque error blanditiis magni quia quo.</p>
+                                </div>
+                                </li>
+                            </div>
+                            <div class="mobileNewsCard py-3">
+                                <li class="w-100 h-100">
+                                    <div class="d-flex entertainmentImgSection0 pb-3">
+                                        <img class="achievementIcon" id="entertainmentMainNewsIcon0 secondCard0" src="./images/Asset 1@4x.png" alt="">
+                                        <div class="d-flex flex-column entertainmentImgSection0 mobileBlankDiv position-absolute">
+                                            <div class="mobileNewsHeadOnly">                                                 
+                                            </div>
+                                            <div class="newsDatenly0 d-flex flex-column mx-1">
+                                                <h6>Date:</h6>
+                                                <h6>Time:</h6>
+                                                <h6>Author:</h6>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                     
+                                <div class="mobileheadlineAndNewsOnly px-3 ">
+                                    <h3 class="h5 pt-3">Lorem ipsum dolor sit amet consectetur.</h3>                                                                                                                                                  
+                                    <p class="text-secondary pt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, suscipit cum atque error blanditiis magni quia quo.</p>
+                                </div>
+                                </li>
+                            </div>
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </section>
+   
+        <div class="container py-4 mobileIcons">
+            <div class="mobilecategories d-flex flex-row justify-content-between align-items-center">
+                <div class="mobile-category-icons mobileActiveIcon">
+                    <img id="entertainment-logo" src="./icons/Asset 1.svg">
+                    <p id="iconLabel">Entertainment</p>
+                </div>
+                <div class="mobile-category-icons">
+                    <img src="./icons/Asset 2.svg">
+                    <p id="iconLabel">Sports</p>
+                </div>
+                <div class="mobile-category-icons">
+                    <img src="./icons/Asset 3.svg">
+                    <p id="iconLabel">City</p>
+                </div>
+                <div class="mobile-category-icons">
+                    <img src="./icons/Asset 4.svg">
+                    <p id="iconLabel">World</p>
+                </div>
+                <div class="mobile-category-icons">
+                    <img src="./icons/Asset 5.svg">
+                    <p id="iconLabel">Business</p>
+                </div>
+                <div class="mobile-category-icons">
+                    <img src="./icons/Asset 6.svg">
+                    <p id="iconLabel">Technology</p>
+                </div>
+            </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
+</body>
+</html>

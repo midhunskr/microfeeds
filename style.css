@@ -11,14 +11,16 @@
     --tiffany-blue: #b8e0d2ff;
     --honeydew: #d6eadfff;
     --fairy-tale: #eac4d5ff;
-    --background-color: #f0f1e2ff;
+    --background-color: #f0f1e2;
     --text-tertiary: #494949ff;
     --icons: #c7c7ba;
     --text-secondary: #353535ff;
     --text-primary: #232323ff;
-    --grey: rgba(65, 65, 65, 0.445);
-    --transparent-grey: rgba(109, 109, 109, 0.445);
+    --grey: #8a8a8a;
+    --transparent-grey: #6d6d6d71;
+    --featured-bg: #bcd6e7;
     --entertainment-bg: #bbd8c9;
+    --sports-bg: #e7d4d4;
 }
 
 body{
@@ -56,15 +58,36 @@ header{
 /* Main Section */
 
 .mainSection{
-    padding: 3rem 0;
+    padding: 3em 0;
 }
 
-.carouselSection, .trending-section{
-    padding: 2rem;
+.leftSection #subHeading{
+    font-size: 2em;
+}
+
+.mainHeadingSection h1, #aheadSpan{
+    font-size: 5em;
+}
+
+.spanSection{
+    width: 40%;
+    height: 85%;
+    border-radius: .8rem;
+    background-color: #fcbb4a;
+}
+
+.leftSection #aheadSpan{
+    line-height: 5.5rem;
+    color: var(--background-color);
+}
+
+
+/* .carouselSection{
+    padding: 1rem;
     border: 2px solid var(--grey);
     border-radius: 1.5rem;
     box-shadow: 5px 5px 0px 0px var(--grey);
-}
+} */
 
 .carousel-caption{
     color: var(--text-primary) !important;
@@ -78,10 +101,14 @@ header{
     margin: 0 auto;
 }
 
-.featuredText{
+.featured{
+    padding: 1rem;
+}
+
+/* .featuredText{
     height: 8% !important;
     border-left: 10px solid var(--grey);
-}
+} */
 
 /* Categories Section */
 
@@ -230,6 +257,18 @@ header{
 
 .newsDatenly0{
     gap: 4rem;
+}
+
+.mobileNewsCard{
+    display: none;
+}
+
+.mobileNewsCard2{
+    display: none;
+}
+
+.mobileNewsCardActive{
+    display: none;
 }
 
 @media screen and (min-width: 1400px) {
@@ -459,6 +498,29 @@ header{
         margin: 0 !important;
     }
 
+    /* Carousel */
+
+    .spanSection{
+        width: 62%;
+        /* height: 85%;
+        border-radius: .8rem;
+        background-color: #fcbb4a; */
+    }
+
+    .rightSection{
+        padding-top: 2rem;
+    }
+    
+    .carouselSection >img{
+        width: 8rem;
+    }
+
+    .scroll #scrollIcon{
+        width: 1.5rem;
+    }
+
+    /* News Card 1 */
+
     .mobileBlankDiv{
         width: 10.97rem;
         position: relative;
@@ -508,6 +570,53 @@ header{
         display: none;
     }
 
+    /* News Card 2 */
+
+    .mobileBlankDiv2{
+        width: 10.97rem;
+        position: relative;
+        height: 9.5rem;
+        margin-left: 7rem;
+        background-color: var(--sports-bg);
+        border-radius: 25px 25px 25px 0;
+        z-index: -1 !important;
+    }
+    
+    .mobileBlankDiv2::before{
+        right: 10.97rem !important;
+        content: "";
+        position: absolute;       
+        background-color: transparent;
+        bottom: 2.5rem;
+        height: 50px;
+        width: 25px;
+        border-bottom-right-radius: 30px;
+        box-shadow: 0 25px 0 0 var(--sports-bg);
+    }
+
+    .mobileheadlineAndNewsOnly2{
+        width: 17.95rem;
+        background: var(--sports-bg);
+        border-radius: 1.5rem;
+        height: 70%;
+    }
+
+    .sportsSection >img{
+        width: 6rem;
+        height: 6rem;
+        object-fit: cover;
+        border-radius: 1.5rem;
+        border: 8px solid var(--sports-bg);
+    }
+
+    /* .mobileNewsCard, .mobileNewsCard2{
+        display: none;
+    } */
+
+    .mobileNewsCardActive{
+        display: block;
+    }
+
     /* Categories Section */
 
     .mobilecategories{
@@ -516,6 +625,7 @@ header{
     }
 
     .mobileIcons{
+        /* display: none; */
         width: 90% !important;
         border: 3px solid var(--entertainment-bg);
         box-shadow: 4px 4px 0px 0px var(--entertainment-bg);
@@ -523,12 +633,6 @@ header{
         background-color: var(--background-color);
         position: sticky;
         bottom: 1rem;
-    }
-
-    .mobile-category-icons > #iconLabel{
-        display: none;
-        font-size: 9px;
-        padding-top: 10px;
     }
 
     .mobile-category-icons{
@@ -554,7 +658,7 @@ header{
         align-items: center;
         font-size: 12px;
         font-weight: 600;
-        transition: all .2s;
+        transition: all .6s;
         
     }
     
@@ -566,7 +670,7 @@ header{
         box-shadow: 3px 3px 0px 0px var(--entertainment-bg);
         border-radius: 8px;
         opacity: 1;
-        animation: moving .5s ease;
+        animation: moving .2s ease;
         /* transform: scale(1.25); */
         
     }
@@ -574,6 +678,12 @@ header{
     @keyframes moving {
         from{transform: translateY(10px); opacity: 0;}
         to{transform: translateY(0px); opacity: 1;}
+    }
+
+    .mobile-category-icons > #iconLabel{
+        display: none;
+        font-size: 9px;
+        padding-top: 10px;
     }
 
     .mobileActiveIcon > #iconLabel{
